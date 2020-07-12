@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datatypes>
+
+    <datatype id="lst_dl1_camera" id_field="event_id" time_field="trigger_time" desc="DL1 real data (March 2020)">
+      <field name="event_id" data_shape="scalar" data_type="int"/>
+      <field name="image" data_shape="array1d" data_type="float" x_dim="1855" um="?"/>
+      <field name="num_trig_px" data_shape="scalar" data_type="int"/>
+      <field name="obs_id" data_shape="scalar" data_type="int"/>
+      <field name="pulse_time" data_shape="array1d" data_type="float" x_dim="1855" um="?"/>
+      <field name="tel_id" data_shape="scalar" data_type="int" />
+      <field name="trigger_time" data_shape="array1d" data_type="float" x_dim="1" um="?"/>
+      <field name="trigger_type" data_shape="scalar" data_type="int" />
+    </datatype>
+
+    <datatype id="camera_pipe_step1_out" id_field="null" time_field="null" desc="">
+      <field name="camera_pixels_charges_distributions" data_shape="array2d" data_type="float" x_dim="1855" y_dim="50"/>
+      <field name="camera_sum" data_shape="array1d" data_type="float" x_dim="1855" />
+      <field name="camera_sum_of_squares" data_shape="array1d" data_type="float" x_dim="1855" />
+    </datatype>
+
+</datatypes>

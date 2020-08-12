@@ -9,6 +9,15 @@ Datatypes* Datatypes::Instance() {
   return _instance;
 }
 
+/**
+ * A brief history of JavaDoc-style (C-style) comments.
+ *
+ * This is the typical JavaDoc-style C-style comment. It starts with two
+ * asterisks.
+ *
+ * @param xml_file_path Even if there is only one possible unified theory. it is just a
+ *                      set of rules and equations.
+ */
 void Datatypes::load_datatypes_from_xml(const char * xml_file_path) {
 
   TiXmlDocument doc( xml_file_path );
@@ -60,7 +69,7 @@ shared_ptr<Datatype> Datatypes::getDatatype(string datatype_id) {
       std::shared_ptr<Datatype> datatype_ptr = *it;
 
       if(datatype_ptr->id == datatype_id)
-      
+
         return datatype_ptr;
   }
 

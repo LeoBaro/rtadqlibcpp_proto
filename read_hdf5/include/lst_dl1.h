@@ -10,6 +10,7 @@ using std::endl;
 
 #include <bits/stdc++.h>
 
+
 #include "H5Cpp.h"
 using namespace H5;
 
@@ -35,7 +36,15 @@ class LST_DL1 {
 
     LST_DL1();
 
+    void create_compound();
+
+    void read_compound_field_as_array();
+    void read_compound_field_as_matrix();
+
     std::shared_ptr<lst_dl1_image> read_data_from_hdf5(string filename, string group, string dataset, int how_many);
+
+    int * read_field_from_hdf5(string filename, string group, string dataset, int how_many);
+
 
 
   private:

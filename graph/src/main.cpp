@@ -4,7 +4,7 @@
 int main()
 {
 	// array of graph edges as per above diagram.
-	Edge edges[] =
+	dqlib::Edge edges[] =
 	{
 		// pair (x, y) represents edge from x to y
 		{ 0, 1 }, { 1, 2 }, { 2, 0 }, { 2, 1 },
@@ -18,17 +18,11 @@ int main()
 	int n = sizeof(edges)/sizeof(edges[0]);
 
 	// construct graph
-	Graph graph(edges, n, N);
+	
+	dqlib::DQGraph dqgraph(edges, n, N);
 
-	// print adjacency list representation of graph
-	for (int i = 0; i < N; i++)
-	{
-		// print given vertex
-		std::cout << i << " --";
 
-		// print all its neighboring vertices
-		printList(graph.head[i]);
-	}
+	dqgraph.printAdjList();
 
 	return 0;
 }

@@ -1,6 +1,7 @@
 #include "DQGraph.h"
 
-DQGraph::DQGraph(Edge edges[], int n, int N) 
+
+dqlib::DQGraph::DQGraph(Edge edges[], int n, int N) 
 {
     // allocate memory
     head = new Node*[N]();
@@ -22,27 +23,19 @@ DQGraph::DQGraph(Edge edges[], int n, int N)
         // point head pointer to new node
         head[src] = newNode;
 
-        // Uncomment below lines for undirected graph
-
-        /*
-        newNode = getAdjListNode(src, head[dest]);
-
-        // change head pointer to point to the new node
-        head[dest] = newNode;
-        */
     }
 }
 
-DQGraph::~DQGraph() {
+dqlib::DQGraph::~DQGraph() {
     for (int i = 0; i < N; i++)
         delete[] head[i];
 
     delete[] head;
 }
 
-Node* DQGraph::getAdjListNode(int dest, Node* head) 
+dqlib::Node* dqlib::DQGraph::getAdjListNode(int dest, Node* head) 
 {
-    Node* newNode = new Node;
+    Node* newNode = new Node();
     newNode->val = dest;
 
     // point new node to current head
@@ -51,7 +44,19 @@ Node* DQGraph::getAdjListNode(int dest, Node* head)
     return newNode;
 }
 
-DQGraph::printList(Node * ptr) 
+void dqlib::DQGraph::printAdjList()
+{
+    for (int i = 0; i < N; i++)
+	{
+		// print given vertex
+		std::cout << i << " --";
+
+		// print all its neighboring vertices
+		printList(head[i]);
+	}
+}
+
+void dqlib::DQGraph::printList(Node * ptr) 
 {
     while (ptr != nullptr) 
     {

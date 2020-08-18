@@ -1,48 +1,54 @@
 #include <iostream>
 
-namespace dqgraph {
+namespace dqlib {
 
-
-    // Data structure to store Adjacency list nodes
-    struct Node {
-        int val;
-        Node* next;
+    class Node
+    {
+        public:
+            Node();
+            virtual ~Node();
+            int val;
+            Node* next;
     };
 
+
     // Data structure to store graph edges
-    struct Edge {
+    struct Edge 
+    {
         int src, dest;
     };
 
     class DQGraph
     {
-        // Function to allocate new node of Adjacency List
-        Node* getAdjListNode(int dest, Node* head)
-        {
-            Node* newNode = new Node;
-            newNode->val = dest;
-
-            // point new node to current head
-            newNode->next = head;
-
-            return newNode;
-        }
-
-        int N;  // number of nodes in the graph
 
     public:
 
-        // An array of pointers to Node to represent
-        // adjacency list
-        Node **head;
+        // Constructor for dynamic allocation
+        DQGraph();
 
-        // Constructor
-        Graph(Edge edges[], int n, int N);
+        // Constructor for static allocation
+        DQGraph(Edge edges[], int n, int N);
 
         // Destructor
-        ~Graph();
+        virtual ~DQGraph();
+
+        // print adjacency list representation of graph
+        void printAdjList();
+
+        // print all neighboring vertices of given vertex
+        void printList(Node* ptr);
+    
+    private:
+
+        // An array of pointers to Node to represent adjacency list
+        Node **head;
+
+        // Function to allocate new node of Adjacency List
+        Node* getAdjListNode(int dest, Node* head);
+
+        int N;  // number of nodes in the graph
+
     };
 
-    // print all neighboring vertices of given vertex
-    void printList(Node* ptr);
+
 }

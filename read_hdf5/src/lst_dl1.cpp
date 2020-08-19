@@ -92,7 +92,7 @@ void LST_DL1::read_compound_field_as_array() {
 
    /* Third "structure" ( will be used to read float field of s1) */
    hid_t      s3_tid;   /* Memory datatype handle */
-   float *     s3 = new float[LENGTH];
+   float *    s3 = new float[LENGTH];
 
    int        i;
    hid_t      file, dataset, space; /* Handles */
@@ -137,17 +137,11 @@ void LST_DL1::read_compound_field_as_array() {
 
 }
 
-
-void LST_DL1::read_compound_field_as_matrix() {
-
+void LST_DL1::read_compound_field_as_static_matrix() {
    /* Third "structure" ( will be used to read float field of s1) */
    hid_t      s3_tid;   /* Memory datatype handle */
 
-   /*
-   for(int j=0; j < LENGTH; j++){
-      s3[j] = new float[ARRSIZE];
-   }
-   */
+
    float s3[LENGTH][ARRSIZE];
 
    int        i;
@@ -211,12 +205,89 @@ void LST_DL1::read_compound_field_as_matrix() {
    H5Tclose(s3_tid);
    H5Dclose(dataset);
    H5Fclose(file);
-
 }
 
+void LST_DL1::read_compound_field_as_matrix() {
+
+   /* Third "structure" ( will be used to read float field of s1) */
+   hid_t      s3_tid;   /* Memory datatype handle */
+
+
+   float* s3 = new float[LENGTH*ARRSIZE];
+   
+   int        i;
+   hid_t      file, dataset, space; /* Handles */
+   herr_t     status;
+   hsize_t    dim[] = {LENGTH};   /* Dataspace dimensions */
+
+   /*
+   * Open the file and the dataset.
+   */
+   file = H5Fopen(H5FILE_NAME, H5F_ACC_RDONLY, H5P_DEFAULT);
+
+   dataset = H5Dopen2(file, DATASETNAME, H5P_DEFAULT);
+
+   /*
+   * Create a data type for s3.
+   */
+   //s3_tid = H5Tcreate(H5T_COMPOUND, sizeof(float)*ARRSIZE);
+   //cout << "==> H5Tcreate status: " << status << endl;
+
+
+   //hsize_t adims[1] = { ARRSIZE };
+   //hid_t loctype = H5Tarray_create(H5T_NATIVE_FLOAT, 1, adims);
+
+   //status = H5Tinsert(s3_tid, "arr_name", 0, loctype);
+   //cout << "==> H5Tinsert status: " << status << endl;
+   /*
+   * Read field b from s1 dataset. Field in the file is found by its name.
+   */
+   //status = H5Dread(dataset, s3_tid, H5S_ALL, H5S_ALL, H5P_DEFAULT, s3);
+   //cout << "==> H5Dread status: " << status << endl;
+
+   s3_tid = H5Tcreate(H5T_COMPOUND, sizeof(float)*ARRSIZE);
+   cout << "==> H5Tcreate status: " << status << endl;
+
+
+   hsize_t adims[1] = { ARRSIZE };
+   hid_t loctype = H5Tarray_create(H5T_NATIVE_FLOAT, 1, adims);
+
+   status = H5Tinsert(s3_tid, "arr_name", 0, loctype);
+   cout << "==> H5Tinsert status: " << status << endl;
+   /*
+   * Read field b from s1 dataset. Field in the file is found by its name.
+   */
+   status = H5Dread(dataset, s3_tid, H5S_ALL, H5S_ALL, H5P_DEFAULT, s3);
+   cout << "==> H5Dread status: " << status << endl;
 
 
 
+   /*
+   * Display the field
+   */
+   printf("\n");
+   printf("Field array : \n");
+
+   
+
+   for( i = 0; i < LENGTH; i++){
+      for(int j=0; j < ARRSIZE; j++) {
+         printf("%.4f ", s3[i*LENGTH+j]);
+      }
+      printf("\n");
+   } 
+
+   printf("\n");
+
+   /*
+   * Release resources
+   */
+   //delete s3;
+   H5Tclose(s3_tid);
+   H5Dclose(dataset);
+   H5Fclose(file);
+
+}
 
 int * LST_DL1::read_field_from_hdf5(string file_name, string group_name, string dataset_name, int how_many) {
    

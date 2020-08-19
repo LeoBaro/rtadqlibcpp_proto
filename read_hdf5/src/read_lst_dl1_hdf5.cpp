@@ -22,6 +22,7 @@ int main(void) {
 
   lst_dl1.read_compound_field_as_array();
 
+  //lst_dl1.read_compound_field_as_static_matrix();
 
   lst_dl1.read_compound_field_as_matrix();
 

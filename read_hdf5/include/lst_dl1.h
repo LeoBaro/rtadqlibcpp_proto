@@ -40,6 +40,7 @@ class LST_DL1 {
 
     void read_compound_field_as_array();
     void read_compound_field_as_matrix();
+    void read_compound_field_as_static_matrix();
 
     std::shared_ptr<lst_dl1_image> read_data_from_hdf5(string filename, string group, string dataset, int how_many);
 

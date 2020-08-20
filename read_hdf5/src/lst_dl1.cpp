@@ -1,5 +1,7 @@
 #include "lst_dl1.h"
 
+#include <chrono>
+
 LST_DL1::LST_DL1() {
 
 }
@@ -227,49 +229,28 @@ void LST_DL1::read_compound_field_as_matrix() {
 
    dataset = H5Dopen2(file, DATASETNAME, H5P_DEFAULT);
 
-   /*
-   * Create a data type for s3.
-   */
-   //s3_tid = H5Tcreate(H5T_COMPOUND, sizeof(float)*ARRSIZE);
-   //cout << "==> H5Tcreate status: " << status << endl;
-
-
-   //hsize_t adims[1] = { ARRSIZE };
-   //hid_t loctype = H5Tarray_create(H5T_NATIVE_FLOAT, 1, adims);
-
-   //status = H5Tinsert(s3_tid, "arr_name", 0, loctype);
-   //cout << "==> H5Tinsert status: " << status << endl;
-   /*
-   * Read field b from s1 dataset. Field in the file is found by its name.
-   */
-   //status = H5Dread(dataset, s3_tid, H5S_ALL, H5S_ALL, H5P_DEFAULT, s3);
-   //cout << "==> H5Dread status: " << status << endl;
-
    s3_tid = H5Tcreate(H5T_COMPOUND, sizeof(float)*ARRSIZE);
    cout << "==> H5Tcreate status: " << status << endl;
-
 
    hsize_t adims[1] = { ARRSIZE };
    hid_t loctype = H5Tarray_create(H5T_NATIVE_FLOAT, 1, adims);
 
    status = H5Tinsert(s3_tid, "arr_name", 0, loctype);
    cout << "==> H5Tinsert status: " << status << endl;
-   /*
-   * Read field b from s1 dataset. Field in the file is found by its name.
-   */
+
+   auto t1 = std::chrono::high_resolution_clock::now();
+
    status = H5Dread(dataset, s3_tid, H5S_ALL, H5S_ALL, H5P_DEFAULT, s3);
-   cout << "==> H5Dread status: " << status << endl;
+
+   auto t2 = std::chrono::high_resolution_clock::now();
+
+   auto duration = std::chrono::duration_cast<std::chrono::microseconds>( t2 - t1 ).count();
+   cout << "==> H5Dread status: " << status << "Took: " << duration << "ms." << endl;
 
 
 
-   /*
-   * Display the field
-   */
    printf("\n");
    printf("Field array : \n");
-
-   
-
    for( i = 0; i < LENGTH; i++){
       for(int j=0; j < ARRSIZE; j++) {
          printf("%.4f ", s3[i*LENGTH+j]);
@@ -279,10 +260,7 @@ void LST_DL1::read_compound_field_as_matrix() {
 
    printf("\n");
 
-   /*
-   * Release resources
-   */
-   //delete s3;
+   delete s3;
    H5Tclose(s3_tid);
    H5Dclose(dataset);
    H5Fclose(file);

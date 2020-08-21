@@ -2,3 +2,8 @@
 deps/
 docs/
 .vscode
+
+# Files
+*.exe
+*.bak
+*.o

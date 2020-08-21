@@ -10,25 +10,17 @@ class ExecutionParams {
 };
 
 
-class ParamsForHDF5Reading: public ExecutionParams {
+class ParamsForHDF5CompoundFieldReading: public ExecutionParams {
     
     public:
 
-        ParamsForHDF5Reading(string file_name, string group_name, string dataset_name) : file_name(file_name), group_name(group_name), dataset_name(dataset_name) {}
+        ParamsForHDF5CompoundFieldReading(string file_name, string group_name, string dataset_name, string field_name, int how_many, int field_size) 
+                    
+            : file_name(file_name), group_name(group_name), dataset_name(dataset_name), field_name(field_name), how_many(how_many), field_size(field_size) {}
 
         string file_name;
         string group_name;
         string dataset_name;
-};
-
-class ParamsForHDF5CompoundFieldReading: public ParamsForHDF5Reading {
-    
-    public:
-
-        ParamsForHDF5CompoundFieldReading(string file_name, string group_name, string dataset_name, string field_name, int how_many, int field_size = 1) 
-                    
-            : ParamsForHDF5Reading(file_name, group_name, dataset_name), field_name(field_name), how_many(how_many), field_size(field_size) {}
-
         string field_name;
         int how_many;
         int field_size;

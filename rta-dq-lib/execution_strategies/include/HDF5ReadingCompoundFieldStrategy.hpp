@@ -23,32 +23,28 @@ T HDF5ReadingCompoundFieldStrategy<T>::exec(ExecutionParams & params) {
 
     float * data = new float[ cf_params.how_many * cf_params.field_size ];
 
-    herr_t     status;
-    hid_t      file_tid, group_tid, dataset_tid, field_tid;
+    H5File  * file    = new H5File  (cf_params.file_name, H5F_ACC_RDONLY);
+    Group   * group   = new Group   (file->openGroup(cf_params.group_name));
+    DataSet * dataset = new DataSet (group->openDataSet(cf_params.dataset_name));
 
-    file_tid = H5Fopen(cf_params.file_name.c_str(), H5F_ACC_RDONLY, H5P_DEFAULT);
-    group_tid = H5Gopen2(file_tid, cf_params.group_name.c_str(), H5P_DEFAULT);
-    dataset_tid = H5Dopen2(group_tid, cf_params.dataset_name.c_str(), H5P_DEFAULT);
-
-    field_tid = H5Tcreate(H5T_COMPOUND, sizeof(float) * cf_params.field_size);
+    CompType field_type( sizeof(float) * cf_params.field_size );
 
     if(cf_params.field_size > 1) 
-    {
+    {   
         hsize_t adims[1] = { cf_params.field_size };
         hid_t loctype = H5Tarray_create(H5T_NATIVE_FLOAT, 1, adims);
-        status = H5Tinsert(field_tid, cf_params.field_name.c_str(), 0, loctype);
+        field_type.insertMember(cf_params.field_name, 0, loctype);
     }
-    else 
+    else
     {
-        status = H5Tinsert(field_tid, cf_params.field_name.c_str(), 0, H5T_NATIVE_FLOAT);
+        field_type.insertMember( cf_params.field_name, 0, PredType::NATIVE_FLOAT);
     }
 
-    status = H5Dread(dataset_tid, field_tid, H5S_ALL, H5S_ALL, H5P_DEFAULT, data);
+    dataset->read(data, field_type);
 
-    H5Tclose(field_tid);
-    H5Dclose(dataset_tid);
-    H5Gclose(group_tid);
-    H5Fclose(file_tid);
+    delete dataset;
+    delete group;
+    delete file;
 
     return data;
 }

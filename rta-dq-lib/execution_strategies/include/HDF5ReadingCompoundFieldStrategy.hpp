@@ -12,12 +12,12 @@ class HDF5ReadingCompoundFieldStrategy: public HDF5ReadingStrategy<T> {
 
     public:
 
-        T exec(ExecutionParams & params);
+        T* exec(ExecutionParams & params);
 };
 
 
 template <class T>
-T HDF5ReadingCompoundFieldStrategy<T>::exec(ExecutionParams & params) {
+T* HDF5ReadingCompoundFieldStrategy<T>::exec(ExecutionParams & params) {
     
     ParamsForHDF5CompoundFieldReading & cf_params = (ParamsForHDF5CompoundFieldReading &) params;
 
@@ -27,7 +27,7 @@ T HDF5ReadingCompoundFieldStrategy<T>::exec(ExecutionParams & params) {
     Group   * group   = new Group   (file->openGroup(cf_params.group_name));
     DataSet * dataset = new DataSet (group->openDataSet(cf_params.dataset_name));
 
-    CompType field_type( sizeof(float) * cf_params.field_size );
+    CompType field_type( sizeof(T) * cf_params.field_size );
 
     if(cf_params.field_size > 1) 
     {   
@@ -40,7 +40,17 @@ T HDF5ReadingCompoundFieldStrategy<T>::exec(ExecutionParams & params) {
         field_type.insertMember( cf_params.field_name, 0, PredType::NATIVE_FLOAT);
     }
 
-    dataset->read(data, field_type);
+    Exception::dontPrint();
+
+    try  
+    {
+        dataset->read(data, field_type);
+    }
+    // catch failure caused by the H5File operations
+    catch( FileIException error )
+    {   
+        error.printErrorStack();
+    }
 
     delete dataset;
     delete group;

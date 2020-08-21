@@ -3,12 +3,12 @@
 
 #include "ExecutionStrategy.hpp"
 
-template <typename T>
+template <class T>
 class HDF5ReadingStrategy : public ExecutionStrategy<T> {
 
     public:
 
-        virtual T exec(ExecutionParams & params) = 0;
+        virtual T* exec(ExecutionParams & params) = 0;
 };
 
 #endif

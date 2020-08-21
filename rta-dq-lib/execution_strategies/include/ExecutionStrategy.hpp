@@ -3,12 +3,12 @@
 
 #include "ExecutionParams.hpp"
 
-template <typename T>
+template <class T>
 class ExecutionStrategy {
 
     public: 
 
-        virtual T exec(ExecutionParams &) = 0;
+        virtual T* exec(ExecutionParams &) = 0;
 
 };
 

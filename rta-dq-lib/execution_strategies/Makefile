@@ -24,8 +24,7 @@ INCS := -I ./include -I /opt/anaconda3/envs/rdlcpp/include
 #****************************************************************************
 # Source files
 #****************************************************************************
-SRCS := src/virtual_strategy_test.cpp
-
+SRCS :=  
 # Add on the sources for libraries
 SRCS := ${SRCS}
 
@@ -38,9 +37,13 @@ $(info $$OBJS is [${OBJS}])
 #****************************************************************************
 # Targets of the build
 #****************************************************************************
-OUTPUT := virtual_strategy_test
+all: hdf5_read hdf5_read_with_threads
 
-all: ${OUTPUT}
+hdf5_read: 
+	${CXX} ${CXXFLAGS} ${INCS} testing/benchmarks/hdf5_read.cpp ${OBJS} ${LIBS} -o hdf5_read.exe
+
+hdf5_read_with_threads: 
+	${CXX} ${CXXFLAGS} ${INCS} testing/benchmarks/hdf5_read_with_threads.cpp ${OBJS} ${LIBS} -o hdf5_read_with_threads.exe
 
 
 
@@ -51,7 +54,7 @@ all: ${OUTPUT}
 
 
 ${OUTPUT}: ${OBJS}
-	${CXX} ${CXXFLAGS} ${INCS} ${OBJS} ${LIBS} -o main.exe
+	
 
 #****************************************************************************
 # common rules

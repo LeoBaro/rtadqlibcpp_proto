@@ -1,0 +1,251 @@
+==14250== Memcheck, a memory error detector
+==14250== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==14250== Using Valgrind-3.16.1 and LibVEX; rerun with -h for copyright info
+==14250== Command: ../../main.exe
+==14250== Parent PID: 24151
+==14250== 
+==14250== Warning: set address range perms: large range [0x6854040, 0x1df5cf24) (undefined)
+==14250== Warning: set address range perms: large range [0x1df5d040, 0x35665f24) (undefined)
+==14250== Mismatched free() / delete / delete []
+==14250==    at 0x4C2B558: operator delete(void*) (vg_replace_malloc.c:584)
+==14250==    by 0x402366: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Address 0x64d7860 is 0 bytes inside a block of size 211,996 alloc'd
+==14250==    at 0x4C2AC27: operator new[](unsigned long) (vg_replace_malloc.c:431)
+==14250==    by 0x4032F3: HDF5ReadingCompoundScalarFieldStrategy<float>::HDF5ReadingCompoundScalarFieldStrategy(ParamsForHDF5CompoundFieldReading&) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x401C15: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250== 
+==14250== Mismatched free() / delete / delete []
+==14250==    at 0x4C2B558: operator delete(void*) (vg_replace_malloc.c:584)
+==14250==    by 0x4023BB: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Address 0x650b530 is 0 bytes inside a block of size 211,996 alloc'd
+==14250==    at 0x4C2AC27: operator new[](unsigned long) (vg_replace_malloc.c:431)
+==14250==    by 0x4032F3: HDF5ReadingCompoundScalarFieldStrategy<float>::HDF5ReadingCompoundScalarFieldStrategy(ParamsForHDF5CompoundFieldReading&) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x401D18: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250== 
+==14250== Mismatched free() / delete / delete []
+==14250==    at 0x4C2B558: operator delete(void*) (vg_replace_malloc.c:584)
+==14250==    by 0x402410: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Address 0x653f1f0 is 0 bytes inside a block of size 211,996 alloc'd
+==14250==    at 0x4C2AC27: operator new[](unsigned long) (vg_replace_malloc.c:431)
+==14250==    by 0x4032F3: HDF5ReadingCompoundScalarFieldStrategy<float>::HDF5ReadingCompoundScalarFieldStrategy(ParamsForHDF5CompoundFieldReading&) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x401E1B: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250== 
+==14250== Mismatched free() / delete / delete []
+==14250==    at 0x4C2B558: operator delete(void*) (vg_replace_malloc.c:584)
+==14250==    by 0x402465: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Address 0x6572eb0 is 0 bytes inside a block of size 211,996 alloc'd
+==14250==    at 0x4C2AC27: operator new[](unsigned long) (vg_replace_malloc.c:431)
+==14250==    by 0x4032F3: HDF5ReadingCompoundScalarFieldStrategy<float>::HDF5ReadingCompoundScalarFieldStrategy(ParamsForHDF5CompoundFieldReading&) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x401F1E: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250== 
+==14250== Mismatched free() / delete / delete []
+==14250==    at 0x4C2B558: operator delete(void*) (vg_replace_malloc.c:584)
+==14250==    by 0x4024BA: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Address 0x65a6b80 is 0 bytes inside a block of size 211,996 alloc'd
+==14250==    at 0x4C2AC27: operator new[](unsigned long) (vg_replace_malloc.c:431)
+==14250==    by 0x4032F3: HDF5ReadingCompoundScalarFieldStrategy<float>::HDF5ReadingCompoundScalarFieldStrategy(ParamsForHDF5CompoundFieldReading&) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x402021: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250== 
+==14250== Mismatched free() / delete / delete []
+==14250==    at 0x4C2B558: operator delete(void*) (vg_replace_malloc.c:584)
+==14250==    by 0x40250F: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Address 0x6854040 is 0 bytes inside a block of size 393,252,580 alloc'd
+==14250==    at 0x4C2AC27: operator new[](unsigned long) (vg_replace_malloc.c:431)
+==14250==    by 0x403339: HDF5ReadingCompoundArrayFieldStrategy<float>::HDF5ReadingCompoundArrayFieldStrategy(ParamsForHDF5CompoundFieldReading&) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x402124: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250== 
+==14250== Warning: set address range perms: large range [0x6854028, 0x1df5cf3c) (noaccess)
+==14250== Mismatched free() / delete / delete []
+==14250==    at 0x4C2B558: operator delete(void*) (vg_replace_malloc.c:584)
+==14250==    by 0x402564: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Address 0x1df5d040 is 0 bytes inside a block of size 393,252,580 alloc'd
+==14250==    at 0x4C2AC27: operator new[](unsigned long) (vg_replace_malloc.c:431)
+==14250==    by 0x403339: HDF5ReadingCompoundArrayFieldStrategy<float>::HDF5ReadingCompoundArrayFieldStrategy(ParamsForHDF5CompoundFieldReading&) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x402227: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250== 
+==14250== Warning: set address range perms: large range [0x1df5d028, 0x35665f3c) (noaccess)
+==14250== Mismatched free() / delete / delete []
+==14250==    at 0x4C2B558: operator delete(void*) (vg_replace_malloc.c:584)
+==14250==    by 0x4025B9: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Address 0x65da920 is 0 bytes inside a block of size 211,996 alloc'd
+==14250==    at 0x4C2AC27: operator new[](unsigned long) (vg_replace_malloc.c:431)
+==14250==    by 0x403339: HDF5ReadingCompoundArrayFieldStrategy<float>::HDF5ReadingCompoundArrayFieldStrategy(ParamsForHDF5CompoundFieldReading&) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x40232A: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250== 
+==14250== Invalid free() / delete / delete[] / realloc()
+==14250==    at 0x4C2B558: operator delete(void*) (vg_replace_malloc.c:584)
+==14250==    by 0x4025EB: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Address 0x65da920 is 0 bytes inside a block of size 211,996 free'd
+==14250==    at 0x4C2B558: operator delete(void*) (vg_replace_malloc.c:584)
+==14250==    by 0x4025B9: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Block was alloc'd at
+==14250==    at 0x4C2AC27: operator new[](unsigned long) (vg_replace_malloc.c:431)
+==14250==    by 0x403339: HDF5ReadingCompoundArrayFieldStrategy<float>::HDF5ReadingCompoundArrayFieldStrategy(ParamsForHDF5CompoundFieldReading&) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x40232A: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250== 
+==14250== Invalid free() / delete / delete[] / realloc()
+==14250==    at 0x4C2B558: operator delete(void*) (vg_replace_malloc.c:584)
+==14250==    by 0x402611: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Address 0x1df5d040 is not stack'd, malloc'd or (recently) free'd
+==14250== 
+==14250== Invalid free() / delete / delete[] / realloc()
+==14250==    at 0x4C2B558: operator delete(void*) (vg_replace_malloc.c:584)
+==14250==    by 0x402637: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Address 0x6854040 is not stack'd, malloc'd or (recently) free'd
+==14250== 
+==14250== Invalid free() / delete / delete[] / realloc()
+==14250==    at 0x4C2B558: operator delete(void*) (vg_replace_malloc.c:584)
+==14250==    by 0x40265D: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Address 0x65a6b80 is 0 bytes inside a block of size 2,080 free'd
+==14250==    at 0x4C2B088: free (vg_replace_malloc.c:538)
+==14250==    by 0x4F5F3BE: H5FL_reg_free (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x505A44E: H5S__hyper_release (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x504BEF9: H5S_close (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4ED8B7F: H5D__free_chunk_info (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x5070456: H5SL_release_common (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x50820D0: H5SL_free (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4ED8A62: H5D__chunk_io_term (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F00342: H5D__read (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F007C9: H5Dread (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x542957F: H5::DataSet::read(void*, H5::DataType const&, H5::DataSpace const&, H5::DataSpace const&, H5::DSetMemXferPropList const&) const (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5_cpp.so.103.1.0)
+==14250==    by 0x403465: HDF5ReadingCompoundArrayFieldStrategy<float>::exec(ExecutionParams&) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Block was alloc'd at
+==14250==    at 0x4C29EDB: malloc (vg_replace_malloc.c:307)
+==14250==    by 0x4F606AA: H5FL_reg_malloc (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x505A032: H5S__hyper_copy (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x506CD6F: H5S_select_copy (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4EDAED7: H5D__chunk_io_init (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F00302: H5D__read (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F007C9: H5Dread (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x542957F: H5::DataSet::read(void*, H5::DataType const&, H5::DataSpace const&, H5::DataSpace const&, H5::DSetMemXferPropList const&) const (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5_cpp.so.103.1.0)
+==14250==    by 0x403465: HDF5ReadingCompoundArrayFieldStrategy<float>::exec(ExecutionParams&) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x402FA0: run(HDF5ReadingCompoundFieldStrategy<float>&, ParamsForHDF5CompoundFieldReading&, std::string, int) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x402564: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250== 
+==14250== Invalid free() / delete / delete[] / realloc()
+==14250==    at 0x4C2B558: operator delete(void*) (vg_replace_malloc.c:584)
+==14250==    by 0x402683: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Address 0x6572eb0 is 0 bytes inside a block of size 368 free'd
+==14250==    at 0x4C2B088: free (vg_replace_malloc.c:538)
+==14250==    by 0x4F5F3BE: H5FL_reg_free (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x504BF1A: H5S_close (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4ED8B9C: H5D__free_chunk_info (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x5070456: H5SL_release_common (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x50820D0: H5SL_free (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4ED8A62: H5D__chunk_io_term (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F00342: H5D__read (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F007C9: H5Dread (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x542957F: H5::DataSet::read(void*, H5::DataType const&, H5::DataSpace const&, H5::DataSpace const&, H5::DSetMemXferPropList const&) const (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5_cpp.so.103.1.0)
+==14250==    by 0x403465: HDF5ReadingCompoundArrayFieldStrategy<float>::exec(ExecutionParams&) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x402FA0: run(HDF5ReadingCompoundFieldStrategy<float>&, ParamsForHDF5CompoundFieldReading&, std::string, int) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Block was alloc'd at
+==14250==    at 0x4C29EDB: malloc (vg_replace_malloc.c:307)
+==14250==    by 0x4F606AA: H5FL_reg_malloc (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F6084D: H5FL_reg_calloc (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x504CDCA: H5S_copy (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4EDAEA2: H5D__chunk_io_init (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F00302: H5D__read (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F007C9: H5Dread (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x542957F: H5::DataSet::read(void*, H5::DataType const&, H5::DataSpace const&, H5::DataSpace const&, H5::DSetMemXferPropList const&) const (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5_cpp.so.103.1.0)
+==14250==    by 0x403465: HDF5ReadingCompoundArrayFieldStrategy<float>::exec(ExecutionParams&) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x402FA0: run(HDF5ReadingCompoundFieldStrategy<float>&, ParamsForHDF5CompoundFieldReading&, std::string, int) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x4025B9: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250== 
+==14250== Invalid free() / delete / delete[] / realloc()
+==14250==    at 0x4C2B558: operator delete(void*) (vg_replace_malloc.c:584)
+==14250==    by 0x4026A9: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Address 0x653f1f0 is 0 bytes inside a block of size 2,080 free'd
+==14250==    at 0x4C2B088: free (vg_replace_malloc.c:538)
+==14250==    by 0x4F5F3BE: H5FL_reg_free (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x505A44E: H5S__hyper_release (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x504BEF9: H5S_close (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4ED8B7F: H5D__free_chunk_info (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x5070456: H5SL_release_common (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x50820D0: H5SL_free (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4ED8A62: H5D__chunk_io_term (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F00342: H5D__read (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F007C9: H5Dread (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x542957F: H5::DataSet::read(void*, H5::DataType const&, H5::DataSpace const&, H5::DataSpace const&, H5::DSetMemXferPropList const&) const (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5_cpp.so.103.1.0)
+==14250==    by 0x403465: HDF5ReadingCompoundArrayFieldStrategy<float>::exec(ExecutionParams&) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Block was alloc'd at
+==14250==    at 0x4C29EDB: malloc (vg_replace_malloc.c:307)
+==14250==    by 0x4F606AA: H5FL_reg_malloc (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x505A032: H5S__hyper_copy (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x506CD6F: H5S_select_copy (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4EDAED7: H5D__chunk_io_init (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F00302: H5D__read (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F007C9: H5Dread (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x542957F: H5::DataSet::read(void*, H5::DataType const&, H5::DataSpace const&, H5::DataSpace const&, H5::DSetMemXferPropList const&) const (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5_cpp.so.103.1.0)
+==14250==    by 0x403465: HDF5ReadingCompoundArrayFieldStrategy<float>::exec(ExecutionParams&) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x402FA0: run(HDF5ReadingCompoundFieldStrategy<float>&, ParamsForHDF5CompoundFieldReading&, std::string, int) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x402564: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250== 
+==14250== Invalid free() / delete / delete[] / realloc()
+==14250==    at 0x4C2B558: operator delete(void*) (vg_replace_malloc.c:584)
+==14250==    by 0x4026CF: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Address 0x650b530 is 0 bytes inside a block of size 48 free'd
+==14250==    at 0x4C2B088: free (vg_replace_malloc.c:538)
+==14250==    by 0x4F5F3BE: H5FL_reg_free (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x505A2F4: H5S__hyper_free_span_info (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x505A437: H5S__hyper_release (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x504BEF9: H5S_close (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4ED8B7F: H5D__free_chunk_info (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x5070456: H5SL_release_common (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x50820D0: H5SL_free (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4ED8A62: H5D__chunk_io_term (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F00342: H5D__read (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F007C9: H5Dread (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x542957F: H5::DataSet::read(void*, H5::DataType const&, H5::DataSpace const&, H5::DataSpace const&, H5::DSetMemXferPropList const&) const (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5_cpp.so.103.1.0)
+==14250==  Block was alloc'd at
+==14250==    at 0x4C29EDB: malloc (vg_replace_malloc.c:307)
+==14250==    by 0x4F606AA: H5FL_reg_malloc (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x5059E6A: H5S__hyper_copy_span_helper.isra.26 (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x505A194: H5S__hyper_copy (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x506CD6F: H5S_select_copy (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4EDAED7: H5D__chunk_io_init (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F00302: H5D__read (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F007C9: H5Dread (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x542957F: H5::DataSet::read(void*, H5::DataType const&, H5::DataSpace const&, H5::DataSpace const&, H5::DSetMemXferPropList const&) const (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5_cpp.so.103.1.0)
+==14250==    by 0x403465: HDF5ReadingCompoundArrayFieldStrategy<float>::exec(ExecutionParams&) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x402FA0: run(HDF5ReadingCompoundFieldStrategy<float>&, ParamsForHDF5CompoundFieldReading&, std::string, int) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x402564: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250== 
+==14250== Invalid free() / delete / delete[] / realloc()
+==14250==    at 0x4C2B558: operator delete(void*) (vg_replace_malloc.c:584)
+==14250==    by 0x4026F5: main (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==  Address 0x64d7860 is 0 bytes inside a block of size 24 free'd
+==14250==    at 0x4C2B088: free (vg_replace_malloc.c:538)
+==14250==    by 0x4F5F3BE: H5FL_reg_free (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x505A308: H5S__hyper_free_span_info (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x505A437: H5S__hyper_release (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x504BEF9: H5S_close (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4ED8B7F: H5D__free_chunk_info (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x5070456: H5SL_release_common (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x50820D0: H5SL_free (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4ED8A62: H5D__chunk_io_term (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F00342: H5D__read (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F007C9: H5Dread (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x542957F: H5::DataSet::read(void*, H5::DataType const&, H5::DataSpace const&, H5::DataSpace const&, H5::DSetMemXferPropList const&) const (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5_cpp.so.103.1.0)
+==14250==  Block was alloc'd at
+==14250==    at 0x4C29EDB: malloc (vg_replace_malloc.c:307)
+==14250==    by 0x4F606AA: H5FL_reg_malloc (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F6084D: H5FL_reg_calloc (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x5059DC8: H5S__hyper_copy_span_helper.isra.26 (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x505A194: H5S__hyper_copy (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x506CD6F: H5S_select_copy (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4EDAED7: H5D__chunk_io_init (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F00302: H5D__read (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x4F007C9: H5Dread (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5.so.103.1.0)
+==14250==    by 0x542957F: H5::DataSet::read(void*, H5::DataType const&, H5::DataSpace const&, H5::DataSpace const&, H5::DSetMemXferPropList const&) const (in /data/Documents/inaf/tasks/rta-dq-lib-c++/deps/CMake-hdf5-1.10.5-install/lib/libhdf5_cpp.so.103.1.0)
+==14250==    by 0x403465: HDF5ReadingCompoundArrayFieldStrategy<float>::exec(ExecutionParams&) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250==    by 0x402FA0: run(HDF5ReadingCompoundFieldStrategy<float>&, ParamsForHDF5CompoundFieldReading&, std::string, int) (in /data/Documents/inaf/tasks/rta-dq-lib-c++/rta-dq-lib/execution_strategies/main.exe)
+==14250== 
+==14250== 
+==14250== HEAP SUMMARY:
+==14250==     in use at exit: 0 bytes in 0 blocks
+==14250==   total heap usage: 528,647 allocs, 528,655 frees, 1,123,760,850 bytes allocated
+==14250== 
+==14250== All heap blocks were freed -- no leaks are possible
+==14250== 
+==14250== For lists of detected and suppressed errors, rerun with: -s
+==14250== ERROR SUMMARY: 16 errors from 16 contexts (suppressed: 0 from 0)

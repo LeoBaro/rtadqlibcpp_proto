@@ -12,12 +12,14 @@ using std::string;
 #include "HDF5ReadingCompoundArrayFieldStrategy.hpp"
 
 
-void run(HDF5ReadingCompoundFieldStrategy<float> & strat, ParamsForHDF5CompoundFieldReading & params, string field_name) {
+void run(HDF5ReadingCompoundFieldStrategy<float> & strat, ParamsForHDF5CompoundFieldReading & params, string field_name, int print_samples=1) {
     auto t1 = std::chrono::high_resolution_clock::now();
     float * p = strat.exec(params);
     auto t2 = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>( t2 - t1 ).count();
-    cout << "==> H5DF reading '"<<field_name<<"' field took: " << duration << "ms." << endl;
+    cout << "==> H5DF reading '"<<field_name<<"' field took: " << duration << "ms. Samples: ";
+    for(int i = 0; i < print_samples; i++) cout << p[i] << " ";
+    cout << endl;
     delete p;
 }
 
@@ -29,8 +31,6 @@ int main() {
     //string file_name = "/dev/shm/dl1_LST-1.1.Run01927.0033.fits.h5";
     string group_name = "/dl1/event/telescope/image";
     string dataset_name = "LST_LSTCam";
-
-
 
 
     // scalar fields

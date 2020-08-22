@@ -12,14 +12,29 @@ class HDF5ReadingCompoundScalarFieldStrategy: public HDF5ReadingCompoundFieldStr
 
     public:
 
-        HDF5ReadingCompoundScalarFieldStrategy(ParamsForHDF5CompoundFieldReading & params) 
-        {
-            this->compound_field_data = new float[ params.how_many ];
-        }
+        HDF5ReadingCompoundScalarFieldStrategy(ParamsForHDF5CompoundFieldReading & params);
+        ~HDF5ReadingCompoundScalarFieldStrategy();
 
         T* exec(ExecutionParams & params);
 };
 
+/**
+ * Constructor for class HDF5ReadingCompoundScalarFieldStrategy. 
+ * 
+ * @param params an object of class ParamsForHDF5CompoundFieldReading
+ */
+template <class T>
+HDF5ReadingCompoundScalarFieldStrategy<T>::HDF5ReadingCompoundScalarFieldStrategy(ParamsForHDF5CompoundFieldReading & params) {
+    this->compound_field_data = new float[ params.how_many ];
+}
+
+/**
+ * Destructor for class HDF5ReadingCompoundScalarFieldStrategy. 
+ */
+template <class T>
+HDF5ReadingCompoundScalarFieldStrategy<T>::~HDF5ReadingCompoundScalarFieldStrategy() {
+    //delete this->compound_field_data; this delete will cause a segmentation fault
+}
 
 /**
  * This method opens an HDF5 file and reads a scalar field of a compound dataset element.

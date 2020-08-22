@@ -11,13 +11,29 @@ class HDF5ReadingCompoundArrayFieldStrategy: public HDF5ReadingCompoundFieldStra
 
     public:
 
-        HDF5ReadingCompoundArrayFieldStrategy(ParamsForHDF5CompoundFieldReading & params) 
-        {
-            this->compound_field_data = new float[ params.how_many * params.field_size ];
-        }
-
+        HDF5ReadingCompoundArrayFieldStrategy(ParamsForHDF5CompoundFieldReading & params);
+        ~HDF5ReadingCompoundArrayFieldStrategy();
+ 
         T* exec(ExecutionParams & params);
 };
+
+/*
+ * Constructor for class HDF5ReadingCompoundArrayFieldStrategy. 
+ * 
+ * @param params an object of class ParamsForHDF5CompoundFieldReading
+ */
+template <class T>
+HDF5ReadingCompoundArrayFieldStrategy<T>::HDF5ReadingCompoundArrayFieldStrategy(ParamsForHDF5CompoundFieldReading & params) {
+    this->compound_field_data = new float[ params.how_many * params.field_size ];
+}
+
+/**
+ * Destructor for class HDF5ReadingCompoundArrayFieldStrategy. 
+ */
+template <class T>
+HDF5ReadingCompoundArrayFieldStrategy<T>::~HDF5ReadingCompoundArrayFieldStrategy() {
+    //delete this->compound_field_data; this delete will cause a segmentation fault
+}
 
 /**
  * This method opens an HDF5 file and reads an array field of a compound dataset element.
